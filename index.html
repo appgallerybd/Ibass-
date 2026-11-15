@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0369a1">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>iBAS Data Entry System</title>
+<title>iBAS++ Data Entry System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
 :root{--g:linear-gradient(135deg,#0369a1 0%,#0ea5e9 55%,#38bdf8 100%);--g2:linear-gradient(135deg,#0ea5e9,#2563eb);--g3:linear-gradient(135deg,#f59e0b,#f97316);--g4:linear-gradient(135deg,#14b8a6,#0ea5e9);--bg:#eef7fd;--ink:#0c1e33;--mut:#5b7189;--line:#dbeaf6;--p:#0369a1;--sh:0 2px 4px rgba(14,165,233,.06),0 10px 30px rgba(14,165,233,.12)}
@@ -78,10 +78,45 @@ input,select,textarea{font-size:16px}
 h2 .ic{width:20px;height:20px}.sb .ic{width:18px;height:18px;top:15px}.chip .ic{width:16px;height:16px}
 .rc .acts .btn.sm{min-height:42px}
 @media(max-width:380px){.bar b{font-size:15.5px}}
+.tools{grid-template-columns:1fr}
+.pc{font-size:38px;font-weight:700;color:var(--p);line-height:1.2;margin-bottom:8px}
+.pbar{height:14px;background:#dbeaf6;border-radius:14px;overflow:hidden}.pbar s{display:block;height:100%;background:var(--g);border-radius:14px;transition:width .8s}
+.tgf{display:flex;gap:10px;align-items:flex-end;margin-top:14px}.tgf .fg{flex:1}
+.pw{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.pie{width:150px;height:150px;flex:none;filter:drop-shadow(0 8px 14px rgba(14,165,233,.3))}
+.lg p{margin:8px 0;display:flex;align-items:center;gap:8px;font-size:14px}.dot{width:13px;height:13px;border-radius:5px;display:inline-block;flex:none}
+.tl{max-height:420px;overflow:auto}.av{font-size:13.5px}
+.xl{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--sh);overflow:auto;max-height:calc(100vh - 290px);min-height:240px;-webkit-overflow-scrolling:touch}
+.xl table{border-collapse:separate;border-spacing:0;width:max-content;min-width:100%}
+.xl th{position:sticky;top:0;z-index:2;cursor:pointer;user-select:none;border-right:1px solid rgba(255,255,255,.25);font-size:13px;padding:12px 14px}
+.xl td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);white-space:nowrap;max-width:300px;overflow:hidden;text-overflow:ellipsis;padding:9px 14px;font-size:13.5px}
+.xl tbody tr:nth-child(even) td{background:#f4faff}.xl tbody tr:nth-child(odd) td{background:#fff}
+.xl td.rt{text-align:right;font-weight:700;color:var(--p)}
+.xl .sc{position:sticky;left:0;z-index:1;text-align:center;font-weight:700;min-width:58px}.xl th.sc{z-index:4}
+.xl td.sc{background:#e6f3fc!important}
+.xl .sr{position:sticky;right:0;z-index:1;text-align:center;box-shadow:-8px 0 12px -8px rgba(14,165,233,.35)}.xl th.sr{z-index:4;cursor:default}
+.xl td.sr{background:#fff!important;padding:6px 10px}
+.pv .pr{padding:11px 2px;border-bottom:1px solid var(--line)}.pv small{display:block;color:var(--mut);font-size:12px}.pv b{font-weight:600;word-break:break-word;white-space:pre-wrap;font-size:15px}
+body.sp{overflow:hidden}
+#splash{position:fixed;inset:0;z-index:100;background:linear-gradient(160deg,#0369a1 0%,#0ea5e9 55%,#7dd3fc 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;overflow:hidden;animation:spout .6s ease 4.4s forwards}
+@keyframes spout{to{opacity:0;visibility:hidden}}
+.sp-bg i{position:absolute;border-radius:50%;background:rgba(255,255,255,.12);animation:fl 6s ease-in-out infinite alternate}
+.sp-bg i:nth-child(1){width:260px;height:260px;left:-80px;top:-60px}.sp-bg i:nth-child(2){width:180px;height:180px;right:-50px;top:25%;animation-delay:-2s}.sp-bg i:nth-child(3){width:320px;height:320px;left:-120px;bottom:-120px;animation-delay:-4s}.sp-bg i:nth-child(4){width:120px;height:120px;right:15%;bottom:14%;animation-delay:-1s}
+@keyframes fl{to{transform:translate(18px,-24px) scale(1.08)}}
+.sp-c{position:relative;padding:0 16px;width:100%}
+.sp-w{font-family:'Great Vibes','Brush Script MT',cursive;font-size:clamp(38px,10vw,64px);line-height:1.3;clip-path:inset(0 100% 0 0);animation:wr 1.2s ease .2s forwards;text-shadow:0 4px 18px rgba(0,0,0,.25)}
+@keyframes wr{to{clip-path:inset(0 0 0 0)}}
+.sp-b{white-space:nowrap;font-size:clamp(56px,19vw,120px);font-weight:700;line-height:1.15;letter-spacing:1px;text-shadow:0 8px 30px rgba(0,0,0,.3)}
+.sp-b span{display:inline-block;opacity:0;transform:scale(.15) translateY(40px);animation:pop .75s cubic-bezier(.2,1.5,.4,1) forwards;animation-delay:calc(1.2s + var(--i)*.13s)}
+@keyframes pop{to{opacity:1;transform:none}}
+.sp-d{margin-top:6px;font-size:clamp(17px,5vw,26px);font-weight:600;letter-spacing:.22em;text-transform:uppercase;opacity:0;animation:sf 1s ease 2.4s forwards}
+.sp-f{position:absolute;left:0;right:0;bottom:calc(28px + env(safe-area-inset-bottom));font-size:14.5px;font-weight:600;letter-spacing:.5px;opacity:0;animation:sf .9s ease 3s forwards}
+@keyframes sf{from{opacity:0;transform:translateY(12px)}to{opacity:.95;transform:none}}
+@media(max-width:380px){.sp-d{letter-spacing:.12em}}
 </style>
 </head>
-<body>
-<header class="bar"><div class="bar-in"><span class="logo" id="lg"></span><div><b id="ttl">iBAS Data Entry System</b><small id="sub"></small></div></div></header>
+<body class="sp">
+<div id="splash"><div class="sp-bg"><i></i><i></i><i></i><i></i></div><div class="sp-c"><div class="sp-w">Welcome to</div><div class="sp-b"><span style="--i:0">i</span><span style="--i:1">B</span><span style="--i:2">A</span><span style="--i:3">S</span><span style="--i:4">+</span><span style="--i:5">+</span></div><div class="sp-d">Data Entry System</div></div><div class="sp-f">Islamic Foundation, Lohagara Narail</div></div>
+<header class="bar"><div class="bar-in"><span class="logo" id="lg"></span><div><b id="ttl">iBAS++ Data Entry System</b><small id="sub"></small></div></div></header>
 <main id="v"></main>
 <nav id="nav"></nav>
 <script>
@@ -91,15 +126,15 @@ var FIELDS=[
 {k:'nameEn',l:'নাম ইংরেজি',t:'text'},
 {k:'father',l:'পিতার নাম',t:'text'},
 {k:'mother',l:'মাতার নাম',t:'text'},
-{k:'nid',l:'NID No.',t:'text',m:'numeric',ph:'১০, ১৩ বা ১৭ ডিজিট'},
+{k:'nid',l:'NID No.',t:'text',m:'numeric'},
 {k:'dob',l:'জন্ম তারিখ',t:'date'},
 {k:'center',l:'কেন্দ্রের ঠিকানা',t:'text'},
 {k:'bank',l:'ব্যাংকের নাম',t:'text'},
 {k:'acc',l:'ব্যাংক হিসাব নম্বর',t:'text',m:'numeric'},
-{k:'routing',l:'রাউটিং নম্বর',t:'text',m:'numeric',ph:'৯ ডিজিট'},
+{k:'routing',l:'রাউটিং নম্বর',t:'text',m:'numeric'},
 {k:'branch',l:'ব্যাংক ও শাখার নাম',t:'text'},
-{k:'mobile',l:'মোবাইল নম্বর',t:'text',m:'tel',ph:'01XXXXXXXXX'},
-{k:'amount',l:'সম্মানীর পরিমান',t:'text',m:'decimal',ph:'টাকা'},
+{k:'mobile',l:'মোবাইল নম্বর',t:'text',m:'tel'},
+{k:'amount',l:'সম্মানীর পরিমান',t:'text',m:'decimal'},
 {k:'other',l:'অন্যান্য তথ্য',t:'textarea'},
 {k:'remark',l:'মন্তব্য',t:'textarea'}];
 var FM={};FIELDS.forEach(function(f){FM[f.k]=f});
@@ -146,16 +181,22 @@ function modal(html){var o=document.createElement('div');o.className='ov';o.inne
 var empty=function(t,l){return '<div class="empty">'+ic('list')+'<p>'+t+'</p>'+(l?'<a class="btn" href="'+l+'">'+ic('plus')+' নতুন এন্ট্রি</a>':'')+'</div>'};
 
 /* ---------- Summary ---------- */
-function summary(m){var r=DB.all(),tot=r.reduce(function(s,x){return s+(+x.amount||0)},0),bk={};
- r.forEach(function(x){var b=(x.bank||'').trim()||'অনির্দিষ্ট';bk[b]=bk[b]||{n:0,a:0};bk[b].n++;bk[b].a+=+x.amount||0});
- var bl=Object.keys(bk).map(function(k){return[k,bk[k]]}).sort(function(a,b){return b[1].a-a[1].a}),mx=Math.max.apply(null,[1].concat(bl.map(function(b){return b[1].a})));
- var rec=r.slice(-5).reverse();
- m.innerHTML='<div class="hero"><span>মোট সম্মানী</span><strong>'+money(tot)+'</strong><span class="chip">'+ic('users')+r.length+' জন</span><span class="chip">'+ic('bank')+bl.length+' ব্যাংক</span></div>'+
- '<div class="stats"><div class="stat"><div class="ib">'+ic('users')+'</div><span>মোট এন্ট্রি</span><strong>'+r.length+'</strong></div>'+
- '<div class="stat"><div class="ib">'+ic('avg')+'</div><span>গড় সম্মানী</span><strong>'+money(r.length?tot/r.length:0)+'</strong></div>'+
- '<div class="stat"><div class="ib">'+ic('bank')+'</div><span>ব্যাংক</span><strong>'+bl.length+'</strong></div></div>'+
- '<div class="grid2"><div class="card"><h2>'+ic('bank')+'ব্যাংকভিত্তিক সারসংক্ষেপ</h2>'+(bl.length?bl.map(function(b){return '<div class="bw"><p><span>'+esc(b[0])+' ('+b[1].n+')</span><b>'+money(b[1].a)+'</b></p><i><s style="width:'+Math.round(b[1].a/mx*100)+'%"></s></i></div>'}).join(''):empty('এখনও কোনো ডেটা নেই','#entry'))+'</div>'+
- '<div class="card"><h2>'+ic('list')+'সর্বশেষ এন্ট্রি</h2>'+(rec.length?rec.map(function(x){return '<div class="li"><span class="av">'+esc((x.nameBn||'?').charAt(0))+'</span><div><b>'+esc(x.nameBn)+'</b><small>'+esc(x.mobile||'—')+'</small></div><b>'+money(x.amount)+'</b></div>'}).join(''):empty('কোনো এন্ট্রি নেই'))+'</div></div>'}
+var TKEY='deTarget_v1';
+function getTarget(){try{return Math.max(0,parseInt(localStorage.getItem(TKEY)||'0',10)||0)}catch(e){return 0}}
+function summary(m){var r=DB.all(),n=r.length,tot=r.reduce(function(s,x){return s+(+x.amount||0)},0),T=getTarget();
+ var pct=T>0?Math.min(100,Math.round(n/T*1000)/10):0,rem=Math.max(0,T-n),C=65.9734,da=(pct/100*C).toFixed(3);
+ var list=r.map(function(x,i){return{x:x,s:i+1}}).reverse();
+ m.innerHTML='<div class="hero"><span>মোট সম্মানী</span><strong>'+money(tot)+'</strong><span class="chip">'+ic('users')+n+' জন শিক্ষক</span></div>'+
+ '<div class="stats"><div class="stat"><div class="ib">'+ic('users')+'</div><span>এন্ট্রি সম্পন্ন</span><strong>'+n+'</strong></div>'+
+ '<div class="stat"><div class="ib">'+ic('avg')+'</div><span>লক্ষ্যমাত্রা</span><strong>'+(T||'—')+'</strong></div>'+
+ '<div class="stat"><div class="ib">'+ic('wallet')+'</div><span>বাকি</span><strong>'+(T?rem:'—')+'</strong></div></div>'+
+ '<div class="grid2"><div class="card"><h2>'+ic('avg')+'এন্ট্রির অগ্রগতি</h2><div class="pc">'+pct+'%</div><div class="pbar"><s style="width:'+pct+'%"></s></div><p class="cnt" style="margin:8px 0 0">'+n+' / '+(T||'—')+' জন</p>'+
+ '<div class="tgf"><div class="fg"><label for="tg">মোট শিক্ষক সংখ্যা</label><input id="tg" inputmode="numeric" value="'+(T||'')+'"></div><button class="btn" id="tgs">'+ic('check')+' সংরক্ষণ</button></div></div>'+
+ '<div class="card"><h2>'+ic('dash')+'পাই চার্ট</h2><div class="pw"><svg class="pie" viewBox="0 0 42 42" role="img" aria-label="'+pct+'%"><defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0369a1"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs><circle cx="21" cy="21" r="21" fill="#dbeaf6"/><circle cx="21" cy="21" r="10.5" fill="none" stroke="url(#pg)" stroke-width="21" stroke-dasharray="'+da+' '+C+'" transform="rotate(-90 21 21)"/></svg>'+
+ '<div class="lg"><p><i class="dot" style="background:var(--g)"></i>এন্ট্রি সম্পন্ন: <b>'+n+' জন ('+pct+'%)</b></p><p><i class="dot" style="background:#dbeaf6"></i>বাকি: <b>'+(T?rem+' জন ('+(Math.round((100-pct)*10)/10)+'%)':'—')+'</b></p></div></div></div></div>'+
+ '<div class="card"><h2>'+ic('users')+'এন্ট্রিকৃত শিক্ষকের তথ্য ('+n+')</h2>'+(n?'<div class="tl">'+list.map(function(o){var x=o.x;return '<div class="li"><span class="av">'+o.s+'</span><div><b>'+esc(x.nameBn)+'</b><small>'+esc(x.center||'—')+' · '+esc(x.mobile||'—')+'</small></div><b style="color:var(--p)">'+money(x.amount)+'</b></div>'}).join('')+'</div>':empty('এখনও কোনো এন্ট্রি নেই','#entry'))+'</div>';
+ var save=function(){var v=parseInt(en($('#tg').value),10);if(isNaN(v)||v<0){toast('সঠিক সংখ্যা দিন');return}try{localStorage.setItem(TKEY,String(v))}catch(e){toast('সংরক্ষণ করা যায়নি');return}toast('সংরক্ষিত ✓');summary(m)};
+ $('#tgs').onclick=save;$('#tg').onkeydown=function(e){if(e.key==='Enter')save()}}
 
 /* ---------- Entry ---------- */
 function fieldHTML(f){return '<div class="fg '+(f.t==='textarea'?'full':'')+'"><label for="f_'+f.k+'">'+f.l+(f.req?'<b>*</b>':'')+'</label>'+(f.t==='textarea'?'<textarea id="f_'+f.k+'"></textarea>':'<input id="f_'+f.k+'" type="'+f.t+'" '+(f.m?'inputmode="'+f.m+'"':'')+' placeholder="'+(f.ph||'')+'" autocomplete="off">')+'<small class="err" id="e_'+f.k+'"></small></div>'}
@@ -186,41 +227,37 @@ function entry(m,id){var all=DB.all(),rec=id?all.filter(function(x){return x.id=
   else{cur.push(Object.assign({id:uid(),created:Date.now()},v));if(DB.save(cur)){toast('সংরক্ষণ হয়েছে ✓');set(null);$('#sn').value=cur.length+1;window.scrollTo(0,0);$('#f_nameBn').focus()}}}}
 
 /* ---------- Records ---------- */
-var S={q:'',sort:'sn',bank:'',min:'',max:''};
+var S={q:'',sk:'s',sd:1};
 function records(m){
- m.innerHTML='<div class="tools"><div class="sb">'+ic('search')+'<input id="q" type="search" placeholder="নাম, NID, মোবাইল, হিসাব নম্বর… দিয়ে খুঁজুন"></div>'+
- '<select id="so"><option value="sn">ক্রম: পুরনো আগে</option><option value="snd">ক্রম: নতুন আগে</option><option value="name">নাম (অ-হ)</option><option value="ah">সম্মানী: বেশি→কম</option><option value="al">সম্মানী: কম→বেশি</option><option value="dob">জন্ম তারিখ</option></select>'+
- '<select id="bk"></select><input id="mn" inputmode="decimal" placeholder="সর্বনিম্ন টাকা"><input id="mx" inputmode="decimal" placeholder="সর্বোচ্চ টাকা"></div><p class="cnt" id="cn"></p><div id="out"></div>';
- $('#q').value=S.q;$('#so').value=S.sort;$('#mn').value=S.min;$('#mx').value=S.max;
+ m.innerHTML='<div class="tools"><div class="sb">'+ic('search')+'<input id="q" type="search" placeholder="নাম, নম্বর বা কেন্দ্রের নাম দিয়ে খুঁজুন"></div></div><p class="cnt" id="cn"></p><div id="out"></div>';
+ $('#q').value=S.q;
+ var cols=[{k:'s',l:'ক্রম'}].concat(FIELDS);
+ var cell=function(x,c){if(c.k==='s')return x.s;if(c.k==='dob')return fdate(x.dob);if(c.k==='amount')return x.amount===''||x.amount==null?'':fnum(x.amount);return x[c.k]==null?'':x[c.k]};
  var draw=function(){var all=DB.all().map(function(x,i){return Object.assign({},x,{s:i+1})});
-  var banks=[],seen={};all.forEach(function(x){var b=(x.bank||'').trim();if(b&&!seen[b]){seen[b]=1;banks.push(b)}});banks.sort();
-  if(S.bank&&!seen[S.bank])S.bank='';
-  $('#bk').innerHTML='<option value="">সব ব্যাংক</option>'+banks.map(function(b){return '<option '+(b===S.bank?'selected':'')+' value="'+esc(b)+'">'+esc(b)+'</option>'}).join('');
-  var q=en(S.q).toLowerCase().trim(),mn=S.min===''?null:+en(S.min),mx=S.max===''?null:+en(S.max);
-  var r=all.filter(function(x){return(!q||(x.s+' '+FIELDS.map(function(f){return x[f.k]}).join(' ')).toLowerCase().indexOf(q)>-1)&&(!S.bank||(x.bank||'').trim()===S.bank)&&(mn==null||isNaN(mn)||(+x.amount||0)>=mn)&&(mx==null||isNaN(mx)||(+x.amount||0)<=mx)});
-  var A=function(x){return+x.amount||0},so={sn:function(a,b){return a.s-b.s},snd:function(a,b){return b.s-a.s},name:function(a,b){return(a.nameBn||'').localeCompare(b.nameBn||'','bn')},ah:function(a,b){return A(b)-A(a)},al:function(a,b){return A(a)-A(b)},dob:function(a,b){return(a.dob||'9').localeCompare(b.dob||'9')}};
-  r.sort(so[S.sort]);var tot=r.reduce(function(s,x){return s+A(x)},0);
+  var q=en(S.q).toLowerCase().trim();
+  var r=all.filter(function(x){return!q||[x.s,x.nameBn,x.nameEn,x.nid,x.mobile,x.acc,x.routing,x.center].join(' ').toLowerCase().indexOf(q)>-1});
+  var k=S.sk,d=S.sd;r.sort(function(a,b){var u,v;if(k==='s'||k==='amount'){u=+a[k]||0;v=+b[k]||0;return(u-v)*d}u=String(a[k]||'');v=String(b[k]||'');if(!u&&v)return 1;if(u&&!v)return-1;return u.localeCompare(v,'bn',{numeric:true})*d});
+  var tot=r.reduce(function(s,x){return s+(+x.amount||0)},0);
   $('#cn').textContent=r.length+' টি রেকর্ড (মোট '+all.length+') · মোট সম্মানী '+money(tot);
   if(!r.length){$('#out').innerHTML='<div class="card">'+(all.length?empty('কোনো ফলাফল পাওয়া যায়নি'):empty('এখনও কোনো রেকর্ড নেই','#entry'))+'</div>';return}
-  var btn=function(x){return '<button class="btn sm o" data-a="v" data-id="'+x.id+'" title="দেখুন">'+ic('eye')+'</button><button class="btn sm o" data-a="e" data-id="'+x.id+'" title="সম্পাদনা">'+ic('edit')+'</button><button class="btn sm r" data-a="d" data-id="'+x.id+'" title="মুছুন">'+ic('trash')+'</button>'};
-  $('#out').innerHTML='<div class="tw"><table><thead><tr><th>ক্রম</th><th>নাম</th><th>NID</th><th>মোবাইল</th><th>ব্যাংক</th><th>হিসাব নং</th><th style="text-align:right">সম্মানী</th><th></th></tr></thead><tbody>'+
-   r.map(function(x){return '<tr><td>'+x.s+'</td><td><b>'+esc(x.nameBn)+'</b><br><small>'+esc(x.nameEn)+'</small></td><td>'+esc(x.nid)+'</td><td>'+esc(x.mobile)+'</td><td>'+esc(x.bank)+'</td><td>'+esc(x.acc)+'</td><td class="num">'+money(x.amount)+'</td><td class="a">'+btn(x)+'</td></tr>'}).join('')+'</tbody></table></div>'+
-   '<div class="cards">'+r.map(function(x){return '<div class="rc"><div class="h"><span class="av">'+x.s+'</span><div><b style="color:var(--ink)">'+esc(x.nameBn)+'</b><small>'+esc(x.nameEn)+'</small></div><b>'+money(x.amount)+'</b></div><p><span>NID</span>'+(esc(x.nid)||'—')+'</p><p><span>মোবাইল</span>'+(esc(x.mobile)||'—')+'</p><p><span>ব্যাংক</span>'+(esc(x.bank)||'—')+'</p><div class="acts">'+btn(x)+'</div></div>'}).join('')+'</div>'};
+  $('#out').innerHTML='<div class="xl"><table><thead><tr>'+cols.map(function(c){return '<th data-s="'+c.k+'" class="'+(c.k==='s'?'sc':'')+'">'+c.l+(S.sk===c.k?(S.sd>0?' ▲':' ▼'):'')+'</th>'}).join('')+'<th class="sr">প্রিভিউ</th></tr></thead><tbody>'+
+   r.map(function(x){return '<tr>'+cols.map(function(c){return '<td class="'+(c.k==='s'?'sc':c.k==='amount'?'rt':'')+'" title="'+esc(cell(x,c))+'">'+esc(cell(x,c))+'</td>'}).join('')+'<td class="sr"><button class="btn sm" data-a="v" data-id="'+x.id+'">'+ic('eye')+' প্রিভিউ</button></td></tr>'}).join('')+'</tbody></table></div>'};
  draw();
- $('#q').oninput=function(e){S.q=e.target.value;draw()};$('#so').onchange=function(e){S.sort=e.target.value;draw()};$('#bk').onchange=function(e){S.bank=e.target.value;draw()};
- $('#mn').oninput=function(e){S.min=e.target.value;draw()};$('#mx').oninput=function(e){S.max=e.target.value;draw()};
- m.onclick=function(e){var b=e.target.closest('[data-a]');if(!b)return;var all=DB.all(),i=-1;all.forEach(function(y,j){if(y.id===b.dataset.id)i=j});if(i<0)return;var x=all[i],a=b.dataset.a;
-  if(a==='e')location.hash='#entry/'+x.id;
-  if(a==='v')modal('<div class="mh"><h3>বিস্তারিত তথ্য</h3><button class="btn sm o" data-x>'+ic('x')+'</button></div><div class="dl"><div><small>ক্রম</small>'+(i+1)+'</div>'+FIELDS.map(function(f){return '<div class="'+(f.t==='textarea'?'f':'')+'"><small>'+f.l+'</small>'+(f.k==='dob'?(esc(fdate(x.dob))||'—'):f.k==='amount'?money(x.amount):(esc(x[f.k])||'—'))+'</div>'}).join('')+'</div><div class="acts"><a class="btn" data-x href="#entry/'+x.id+'">'+ic('edit')+' সম্পাদনা</a></div>');
-  if(a==='d'){var o=modal('<div class="mh"><h3>মুছে ফেলবেন?</h3></div><p><b>'+esc(x.nameBn)+'</b> এর রেকর্ডটি স্থায়ীভাবে মুছে যাবে এবং ক্রম নম্বর পুনর্বিন্যাস হবে।</p><div class="acts"><button class="btn r" id="yes">'+ic('trash')+' হ্যাঁ, মুছুন</button><button class="btn o" data-x>বাতিল</button></div>');
-   $('#yes',o).onclick=function(){var c=DB.all().filter(function(y){return y.id!==x.id});if(DB.save(c)){o.close();toast('মুছে ফেলা হয়েছে');draw()}}}}}
+ $('#q').oninput=function(e){S.q=e.target.value;draw()};
+ m.onclick=function(e){
+  var th=e.target.closest('th[data-s]');if(th){var k=th.dataset.s;if(S.sk===k)S.sd=-S.sd;else{S.sk=k;S.sd=1}draw();return}
+  var b=e.target.closest('[data-a]');if(!b)return;var all=DB.all(),i=-1;all.forEach(function(y,j){if(y.id===b.dataset.id)i=j});if(i<0)return;var x=all[i];
+  var o=modal('<div class="mh"><h3>সম্পূর্ণ তথ্য</h3><button class="btn sm o" data-x>'+ic('x')+'</button></div><div class="pv"><div class="pr"><small>ক্রম</small><b>'+(i+1)+'</b></div>'+FIELDS.map(function(f){return '<div class="pr"><small>'+f.l+'</small><b>'+(f.k==='dob'?(esc(fdate(x.dob))||'—'):f.k==='amount'?money(x.amount):(esc(x[f.k])||'—'))+'</b></div>'}).join('')+'</div><div class="acts"><button class="btn" id="pe">'+ic('edit')+' সম্পাদনা</button><button class="btn r" id="pd">'+ic('trash')+' ডিলিট</button></div>');
+  $('#pe',o).onclick=function(){o.close();location.hash='#entry/'+x.id};
+  $('#pd',o).onclick=function(){var c=modal('<div class="mh"><h3>মুছে ফেলবেন?</h3></div><p><b>'+esc(x.nameBn)+'</b> এর রেকর্ডটি স্থায়ীভাবে মুছে যাবে এবং ক্রম নম্বর পুনর্বিন্যাস হবে।</p><div class="acts"><button class="btn r" id="yes">'+ic('trash')+' হ্যাঁ, মুছুন</button><button class="btn o" data-x>বাতিল</button></div>');
+   $('#yes',c).onclick=function(){var n=DB.all().filter(function(y){return y.id!==x.id});if(DB.save(n)){c.close();o.close();toast('মুছে ফেলা হয়েছে');draw()}}}}}
 
 /* ---------- Export ---------- */
 function exportV(m){var r=DB.all();
- m.innerHTML='<div class="card"><h2>'+ic('doc')+'এক্সপোর্ট সেটিংস</h2><div class="opt"><div class="fg"><label>ডকুমেন্টের শিরোনাম (ওয়ার্ড)</label><input id="ti" value="সম্মানী প্রাপকদের তালিকা"></div><div class="fg"><label>ওয়ার্ড পেজ (লিগ্যাল সাইজ)</label><select id="or"><option value="l">ল্যান্ডস্কেপ (১৪″ × ৮.৫″)</option><option value="p">পোর্ট্রেট (৮.৫″ × ১৪″)</option></select></div></div><p class="cnt" style="margin:12px 0 0">মোট রেকর্ড: <b>'+r.length+'</b> · সব দিকে মার্জিন ০.৫″</p></div>'+
- '<div class="ex"><div class="card"><span class="big" style="background:var(--g4)">'+ic('sheet')+'</span><h2 style="margin:0">Excel (.xlsx)</h2><p>সব ১৬টি কলামসহ স্প্রেডশিট, শেষে মোট সম্মানী। NID ও হিসাব নম্বর টেক্সট হিসেবে সংরক্ষিত।</p><button class="btn" id="xl">'+ic('down')+' Excel ডাউনলোড</button></div>'+
- '<div class="card"><span class="big" style="background:var(--g2)">'+ic('doc')+'</span><h2 style="margin:0">Word (.doc)</h2><p>লিগ্যাল পেজ সাইজ, চারদিকে ০.৫″ মার্জিন, টেবিল আকারে।</p><button class="btn" id="wd">'+ic('down')+' Word ডাউনলোড</button></div>'+
- '<div class="card" style="grid-column:1/-1"><span class="big" style="background:var(--g3)">'+ic('shield')+'</span><h2 style="margin:0">ব্যাকআপ (JSON)</h2><p>সব ডেটার ব্যাকআপ নিন বা আগের ব্যাকআপ পুনরুদ্ধার করুন।</p><div class="acts" style="margin:0"><button class="btn o" id="bk">'+ic('down')+' ব্যাকআপ</button><button class="btn o" id="rt">'+ic('up')+' রিস্টোর</button></div><input type="file" id="fi" accept=".json,application/json" hidden></div></div>';
+ m.innerHTML='<div class="card"><h2>'+ic('doc')+'এক্সপোর্ট সেটিংস</h2><div class="opt"><div class="fg"><label>ডকুমেন্টের শিরোনাম (ওয়ার্ড)</label><input id="ti" value="সম্মানী প্রাপকদের তালিকা"></div><div class="fg"><label>ওয়ার্ড পেজ (লিগ্যাল সাইজ)</label><select id="or"><option value="l">ল্যান্ডস্কেপ (১৪″ × ৮.৫″)</option><option value="p">পোর্ট্রেট (৮.৫″ × ১৪″)</option></select></div></div><p class="cnt" style="margin:12px 0 0">মোট রেকর্ড: <b>'+r.length+'</b></p></div>'+
+ '<div class="ex"><div class="card"><span class="big" style="background:var(--g4)">'+ic('sheet')+'</span><h2 style="margin:0">Excel (.xlsx)</h2><button class="btn" id="xl">'+ic('down')+' Excel ডাউনলোড</button></div>'+
+ '<div class="card"><span class="big" style="background:var(--g2)">'+ic('doc')+'</span><h2 style="margin:0">Word (.doc)</h2><button class="btn" id="wd">'+ic('down')+' Word ডাউনলোড</button></div>'+
+ '<div class="card" style="grid-column:1/-1"><span class="big" style="background:var(--g3)">'+ic('shield')+'</span><h2 style="margin:0">ব্যাকআপ (JSON)</h2><div class="acts" style="margin:0"><button class="btn o" id="bk">'+ic('down')+' ব্যাকআপ</button><button class="btn o" id="rt">'+ic('up')+' রিস্টোর</button></div><input type="file" id="fi" accept=".json,application/json" hidden></div></div>';
  var get=function(){var d=DB.all();if(!d.length){toast('এক্সপোর্ট করার মতো কোনো ডেটা নেই');return null}return d};
  var val=function(x,f){return f.k==='dob'?fdate(x.dob):(x[f.k]==null?'':String(x[f.k]))};
  var dl=function(blob,name){var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},4000)};
@@ -257,14 +294,15 @@ function exportV(m){var r=DB.all();
 var TABS=[['summary','dash','Summary'],['entry','plus','Entry'],['records','list','Records'],['export','down','Export']];
 function route(){var h=location.hash.slice(1).split('/'),v=h[0];if(!TABS.some(function(t){return t[0]===v}))v='summary';
  $$('#nav a').forEach(function(a){a.classList.toggle('on',a.dataset.v===v)});
- var T={summary:['সারসংক্ষেপ','আপনার ডেটার পূর্ণ চিত্র'],entry:[h[1]?'এন্ট্রি সম্পাদনা':'নতুন এন্ট্রি','তথ্য যাচাই করে সংরক্ষণ করুন'],records:['রেকর্ডস','খুঁজুন, দেখুন ও পরিচালনা করুন'],export:['এক্সপোর্ট','Excel ও Word ফাইল তৈরি করুন']}[v];
- $('#sub').textContent=T[0]+' · '+T[1];document.title=T[0]+' · iBAS Data Entry System';
+ var T={summary:'সারসংক্ষেপ',entry:h[1]?'এন্ট্রি সম্পাদনা':'নতুন এন্ট্রি',records:'রেকর্ডস','export':'এক্সপোর্ট'}[v];
+ $('#sub').textContent=T;
  var m=$('#v');m.onclick=null;m.className='';void m.offsetWidth;m.className='fade';
  ({summary:summary,entry:entry,records:records,'export':exportV})[v](m,h[1]);window.scrollTo(0,0)}
 document.addEventListener('DOMContentLoaded',function(){
  $('#lg').innerHTML=ic('users');
  $('#nav').innerHTML=TABS.map(function(t){return '<a href="#'+t[0]+'" data-v="'+t[0]+'">'+ic(t[1])+t[2]+'</a>'}).join('');
- window.addEventListener('hashchange',route);route()});
+ window.addEventListener('hashchange',route);route();
+ setTimeout(function(){var sp=$('#splash');if(sp)sp.remove();document.body.classList.remove('sp')},5000)});
 </script>
 </body>
- </html>
+</html>
